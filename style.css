@@ -1,0 +1,276 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-alt: #1f2937;
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #f87171;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --shadow: rgba(15, 23, 42, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #020817 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 24px 16px 40px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  text-align: center;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: min(100%, 760px);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px var(--shadow);
+  padding: 20px;
+}
+
+.hero {
+  display: grid;
+  gap: 18px;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.lesson-list {
+  display: grid;
+  gap: 12px;
+}
+
+.lesson-button,
+.primary-button,
+.secondary-button,
+.answer-button {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.lesson-button,
+.primary-button,
+.secondary-button {
+  width: 100%;
+  padding: 14px 16px;
+  font-weight: 700;
+}
+
+.lesson-button {
+  background: var(--panel-alt);
+  color: var(--text);
+  text-align: left;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #04111f;
+}
+
+.secondary-button {
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--text);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.lesson-button:hover,
+.primary-button:hover,
+.secondary-button:hover,
+.answer-button:hover {
+  transform: translateY(-1px);
+}
+
+.lesson-card,
+.question-card,
+.results-card {
+  display: grid;
+  gap: 18px;
+}
+
+.lesson-heading,
+.question-heading {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+
+.definition,
+.tip,
+.result-summary,
+.meta,
+.final-report {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.meta {
+  color: var(--muted);
+}
+
+.form-row {
+  display: grid;
+  gap: 10px;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+}
+
+.answer-input:focus {
+  outline: 2px solid rgba(56, 189, 248, 0.8);
+  outline-offset: 2px;
+}
+
+.answer-button {
+  padding: 12px 16px;
+  background: rgba(56, 189, 248, 0.16);
+  color: var(--text);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+}
+
+.feedback {
+  margin-top: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.feedback.correct {
+  background: rgba(34, 197, 94, 0.14);
+  color: #bbf7d0;
+}
+
+.feedback.incorrect {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.inline-actions,
+.nav-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.inline-actions > *,
+.nav-row > * {
+  flex: 1 1 180px;
+}
+
+.score-box {
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.stat {
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.review-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.dl-button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  background: linear-gradient(135deg, #34d399, #10b981);
+  color: #02150f;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 16px 12px 28px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .answer-button,
+  .lesson-button {
+    padding: 13px 14px;
+  }
+}
